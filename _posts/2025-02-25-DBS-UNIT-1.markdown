@@ -1,0 +1,74 @@
+---
+layout: post
+title: DBS UNIT 1
+date: 2025-02-25 13:32:20 +0300
+description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
+img: dm-current-database-trends.webp # Add image post (optional)
+fig-caption: # Add figcaption (optional)
+tags: [Holidays, Hawaii]
+
+---
+### Understanding Database Systems
+
+Data is very important in today’s world. Every industry, from banking to social media, depends on storing and managing information. This is where database systems help. In this blog, we will talk about what database systems are, why we need them, and how they are useful.
+
+### What is a Database System?
+
+A database system is a way to store and manage data in an organized way. It has two main parts:
+
+Database: A collection of structured information.
+
+Database Management System (DBMS): Software that helps users store, access, and manage data.
+
+Together, these make up a database system, which ensures data is accurate, secure, and easy to access.
+
+### Why Do We Need Database Systems?
+
+Imagine a college registration process where students fill out paper forms, deposit fees at a bank, and all records are stored in different Excel files. This method is slow and inefficient.
+
+A database system helps by:
+
+Keeping data accurate: No duplicate or incorrect records.
+
+Better security: Only authorized people can access the data.
+
+Scalability: Can handle more data without problems.
+
+Easy access: Data is stored in one place and can be retrieved quickly.
+
+### Problems with Traditional File Systems
+
+Using separate files to store data has many problems, such as:
+
+Duplicate and inconsistent data
+
+Hard to find and access information
+
+Data stored in different formats
+
+Risk of errors when updating records
+
+Security issues
+
+### Where Are Database Systems Used?
+
+Databases are used in many industries, such as:
+
+Banks: Managing transactions and customer data.
+
+Social Media: Storing user profiles and posts.
+
+Retail: Keeping records of sales and customers.
+
+Navigation: Storing and retrieving location data.
+
+### How Database Systems Have Evolved
+
+In the past, databases were rigid and hard to manage. Then, relational databases made things more flexible. Today, modern databases like NoSQL and cloud-based solutions provide even faster and more efficient ways to handle data.
+
+### Conclusion
+
+Database systems help businesses and organizations store, organize, and access large amounts of data efficiently. As data grows, these systems become even more important.
+
+In the next lesson, we will learn about database architecture, languages, and design!
+

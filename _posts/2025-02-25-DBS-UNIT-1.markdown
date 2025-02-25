@@ -8,6 +8,7 @@ fig-caption: # Add figcaption (optional)
 tags: [Holidays, Hawaii]
 
 ---
+#### Lesson 1
 ### Understanding Database Systems
 
 Data is very important in today’s world. Every industry, from banking to social media, depends on storing and managing information. This is where database systems help. In this blog, we will talk about what database systems are, why we need them, and how they are useful.
@@ -70,5 +71,96 @@ In the past, databases were rigid and hard to manage. Then, relational databases
 
 Database systems help businesses and organizations store, organize, and access large amounts of data efficiently. As data grows, these systems become even more important.
 
-In the next lesson, we will learn about database architecture, languages, and design!
+#### Lesson 2 
+### Introduction to Data Models and Database Architecture
+
+In our last lesson, we learned about database systems. Now, let’s look at different data models and how databases are structured.
+
+### What is a Data Model?
+
+A data model is a way to organize and store data in a database. It helps in defining how data is structured and accessed.
+
+### Types of Data Models
+
+Here are four common types:
+
+Entity-Relationship (ER) Model: Uses diagrams to show data relationships.
+
+Semi-Structured Model: Works with flexible formats like JSON and XML.
+
+Object-Based Model: Stores data in objects, like in programming.
+
+Relational Model: Stores data in tables with rows and columns, using SQL.
+
+### Types of Databases
+
+Some common databases include:
+
+Relational Databases (MySQL, PostgreSQL)
+
+NoSQL Databases (MongoDB, Redis)
+
+Graph Databases (Neo4j)
+
+For this course, we will focus on Relational and ER Models as they are widely used.
+
+### Evolution of Databases
+
+Early databases were complex and hard to manage. In the 1960s, Edgar F. Codd introduced the relational model, making databases easier to use and more scalable.
+
+### Understanding the Relational Model
+
+Data is stored in tables.
+
+Each table has columns (attributes) and rows (records).
+
+SQL is used to create, read, update, and delete data.
+
+### Database Abstraction
+
+Databases hide complexity using three levels:
+
+Physical Level: How data is stored.
+
+Logical Level: What data is stored and how it relates.
+
+View Level: The part of the database users interact with.
+
+### How Databases Are Designed
+
+Choose a data model.
+
+Create a design (list of required data and relationships).
+
+Convert to tables.
+
+Decide on storage and indexing.
+
+### Database Schema vs. Instance
+
+Database Schema: The overall structure/design.
+
+Database Instance: The current data stored.
+
+### Database Languages
+
+Databases use special languages:
+
+DDL (Data Definition Language): Defines structure (CREATE TABLE).
+
+DML (Data Manipulation Language): Retrieves and updates data (SELECT, INSERT).
+
+### What is a Database Engine?
+
+A database engine is software that handles data. Its parts include:
+
+Storage Manager: Stores and retrieves data.
+
+Query Processor: Runs queries.
+
+Transaction Manager: Ensures data consistency.
+
+### Conclusion
+
+Knowing how databases work helps us build better systems. Next, we’ll learn about database users and administrators!
 

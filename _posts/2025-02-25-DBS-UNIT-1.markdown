@@ -11,7 +11,7 @@ tags: [Holidays, Hawaii]
 ## Lesson 1
 ### Understanding Database Systems
 
-Data is very important in today’s world. Every industry, from banking to social media, depends on storing and managing information. This is where database systems help. In this blog, we will talk about what database systems are, why we need them, and how they are useful.
+Data is very important in today’s world. Every industry, from banking to social media, depends on storing and managing information. This is where database systems help. In this blog I will be talking about what database systems are, why we need them and how they are useful.
 
 ### What is a Database System?
 
@@ -23,6 +23,7 @@ A database system is a way to store and manage data in an organized way. It has 
 
 Together, these make up a database system, which ensures data is accurate, secure, and easy to access.
 
+![alt text](../assets/img/RDBMS.png)
 ### Why Do We Need Database Systems?
 
 Imagine a college registration process where students fill out paper forms, deposit fees at a bank, and all records are stored in different Excel files. This method is slow and inefficient.
@@ -37,7 +38,7 @@ A database system helps by:
 
 Easy access: Data is stored in one place and can be retrieved quickly.
 
-### Problems with Traditional File Systems
+### Problems with File Systems
 
 Using separate files to store data has many problems, such as:
 
@@ -52,8 +53,6 @@ Using separate files to store data has many problems, such as:
 Databases are used in many industries, such as:
 - Banks: Managing transactions and customer data.
 - Social Media: Storing user profiles and posts.
-- Retail: Keeping records of sales and customers.
-- Navigation: Storing and retrieving location data.
 
 ### How Database Systems Have Evolved
 

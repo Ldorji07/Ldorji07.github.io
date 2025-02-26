@@ -8,7 +8,7 @@ fig-caption: # Add figcaption (optional)
 tags: [Holidays, Hawaii]
 
 ---
-#### Lesson 1
+## Lesson 1
 ### Understanding Database Systems
 
 Data is very important in today’s world. Every industry, from banking to social media, depends on storing and managing information. This is where database systems help. In this blog, we will talk about what database systems are, why we need them, and how they are useful.
@@ -17,9 +17,9 @@ Data is very important in today’s world. Every industry, from banking to socia
 
 A database system is a way to store and manage data in an organized way. It has two main parts:
 
-Database: A collection of structured information.
+- Database: A collection of structured information.
 
-Database Management System (DBMS): Software that helps users store, access, and manage data.
+- Database Management System (DBMS): Software that helps users store, access, and manage data.
 
 Together, these make up a database system, which ensures data is accurate, secure, and easy to access.
 
@@ -29,11 +29,11 @@ Imagine a college registration process where students fill out paper forms, depo
 
 A database system helps by:
 
-Keeping data accurate: No duplicate or incorrect records.
+- Keeping data accurate: No duplicate or incorrect records.
 
-Better security: Only authorized people can access the data.
+- Better security: Only authorized people can access the data.
 
-Scalability: Can handle more data without problems.
+- Scalability: Can handle more data without problems.
 
 Easy access: Data is stored in one place and can be retrieved quickly.
 
@@ -41,27 +41,19 @@ Easy access: Data is stored in one place and can be retrieved quickly.
 
 Using separate files to store data has many problems, such as:
 
-Duplicate and inconsistent data
-
-Hard to find and access information
-
-Data stored in different formats
-
-Risk of errors when updating records
-
-Security issues
+- Duplicate and inconsistent data
+- Hard to find and access information
+- Data stored in different formats
+- Risk of errors when updating records
+- Security issues
 
 ### Where Are Database Systems Used?
 
 Databases are used in many industries, such as:
-
-Banks: Managing transactions and customer data.
-
-Social Media: Storing user profiles and posts.
-
-Retail: Keeping records of sales and customers.
-
-Navigation: Storing and retrieving location data.
+- Banks: Managing transactions and customer data.
+- Social Media: Storing user profiles and posts.
+- Retail: Keeping records of sales and customers.
+- Navigation: Storing and retrieving location data.
 
 ### How Database Systems Have Evolved
 
@@ -71,7 +63,7 @@ In the past, databases were rigid and hard to manage. Then, relational databases
 
 Database systems help businesses and organizations store, organize, and access large amounts of data efficiently. As data grows, these systems become even more important.
 
-#### Lesson 2 
+## Lesson 2 
 ### Introduction to Data Models and Database Architecture
 
 In our last lesson, we learned about database systems. Now, let’s look at different data models and how databases are structured.
@@ -84,23 +76,17 @@ A data model is a way to organize and store data in a database. It helps in defi
 
 Here are four common types:
 
-Entity-Relationship (ER) Model: Uses diagrams to show data relationships.
-
-Semi-Structured Model: Works with flexible formats like JSON and XML.
-
-Object-Based Model: Stores data in objects, like in programming.
-
-Relational Model: Stores data in tables with rows and columns, using SQL.
+- Entity-Relationship (ER) Model: Uses diagrams to show data relationships.
+- Semi-Structured Model: Works with flexible formats like JSON and XML.
+- Object-Based Model: Stores data in objects, like in programming.
+- Relational Model: Stores data in tables with rows and columns, using SQL.
 
 ### Types of Databases
 
 Some common databases include:
-
-Relational Databases (MySQL, PostgreSQL)
-
-NoSQL Databases (MongoDB, Redis)
-
-Graph Databases (Neo4j)
+- Relational Databases (MySQL, PostgreSQL)
+- NoSQL Databases (MongoDB, Redis)
+- Graph Databases (Neo4j)
 
 For this course, we will focus on Relational and ER Models as they are widely used.
 
@@ -110,31 +96,23 @@ Early databases were complex and hard to manage. In the 1960s, Edgar F. Codd int
 
 ### Understanding the Relational Model
 
-Data is stored in tables.
-
-Each table has columns (attributes) and rows (records).
-
-SQL is used to create, read, update, and delete data.
+- Data is stored in tables.
+- Each table has columns (attributes) and rows (records).
+- SQL is used to create, read, update, and delete data.
 
 ### Database Abstraction
 
-Databases hide complexity using three levels:
-
-Physical Level: How data is stored.
-
-Logical Level: What data is stored and how it relates.
-
-View Level: The part of the database users interact with.
+- Databases hide complexity using three levels:
+- Physical Level: How data is stored.
+- Logical Level: What data is stored and how it relates.
+- View Level: The part of the database users interact with.
 
 ### How Databases Are Designed
 
-Choose a data model.
-
-Create a design (list of required data and relationships).
-
-Convert to tables.
-
-Decide on storage and indexing.
+- Choose a data model.
+- Create a design (list of required data and relationships).
+- Convert to tables.
+- Decide on storage and indexing.
 
 ### Database Schema vs. Instance
 
@@ -144,21 +122,16 @@ Database Instance: The current data stored.
 
 ### Database Languages
 
-Databases use special languages:
-
-DDL (Data Definition Language): Defines structure (CREATE TABLE).
-
-DML (Data Manipulation Language): Retrieves and updates data (SELECT, INSERT).
+- Databases use special languages:
+- DDL (Data Definition Language): Defines structure (CREATE TABLE).
+- DML (Data Manipulation Language): Retrieves and updates data (SELECT, INSERT).
 
 ### What is a Database Engine?
 
-A database engine is software that handles data. Its parts include:
-
-Storage Manager: Stores and retrieves data.
-
-Query Processor: Runs queries.
-
-Transaction Manager: Ensures data consistency.
+- A database engine is software that handles data. Its parts include:
+- Storage Manager: Stores and retrieves data.
+- Query Processor: Runs queries.
+- Transaction Manager: Ensures data consistency.
 
 ### Conclusion
 

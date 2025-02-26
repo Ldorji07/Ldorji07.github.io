@@ -29,11 +29,8 @@ Imagine a college registration process where students fill out paper forms, depo
 A database system helps by:
 
 - Keeping data accurate: No duplicate or incorrect records.
-
 - Better security: Only authorized people can access the data.
-
 - Scalability: Can handle more data without problems.
-
 - Easy access: Data is stored in one place and can be retrieved quickly.
 
 ### Problems with File Systems

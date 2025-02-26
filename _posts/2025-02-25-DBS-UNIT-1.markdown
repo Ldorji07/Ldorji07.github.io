@@ -77,19 +77,16 @@ Here are four common types:
 
 - Entity-Relationship (ER) Model: Uses diagrams to show data relationships.
 ![alt text](../assets/img/ER-Model.png)
+
 - Semi-Structured Model: Works with flexible formats like JSON and XML.
 ![alt text](../assets/img/978-0-387-39940-9_19_Part_Fig3-337_HTML.jpg)
+
 - Object-Based Model: Stores data in objects, like in programming.
 ![alt text](../assets/img/oo.png)
+
 - Relational Model: Stores data in tables with rows and columns, using SQL.
 ![alt text](../assets/img/Your-paragraph-text--90-.jpg)
 
-### Types of Databases
-
-Some common databases include:
-- Relational Databases (MySQL, PostgreSQL)
-- NoSQL Databases (MongoDB, Redis)
-- Graph Databases (Neo4j)
 
 For this course, we focus more on Relational and ER Models as they are widely used.
 

@@ -65,7 +65,7 @@ Database systems help businesses and organizations store, organize, and access l
 ## Lesson 2 
 ### Introduction to Data Models and Database Architecture
 
-In our last lesson, we learned about database systems. Now, let’s look at different data models and how databases are structured.
+In our last lesson, we learned about database systems. 
 
 ### What is a Data Model?
 
@@ -78,13 +78,13 @@ Here are four common types:
 - Entity-Relationship (ER) Model: Uses diagrams to show data relationships.
 ![alt text](../assets/img/ER-Model.png)
 
-- Semi-Structured Model: Works with flexible formats like JSON and XML.
+- Semi-Structured Model: Works with flexible formats.
 ![alt text](../assets/img/978-0-387-39940-9_19_Part_Fig3-337_HTML.jpg)
 
-- Object-Based Model: Stores data in objects, like in programming.
+- Object-Based Model: Stores data in objects.
 ![alt text](../assets/img/oo.png)
 
-- Relational Model: Stores data in tables with rows and columns, using SQL.
+- Relational Model: Stores data in tables with rows and columns.
 ![alt text](../assets/img/Your-paragraph-text--90-.jpg)
 
 
@@ -107,7 +107,6 @@ Early databases were complex and hard to manage. In the 1960s, Edgar F. Codd int
 - Logical Level: What data is stored and how it relates.
 - View Level: The part of the database users interact with.
 
-![alt text](../assets/img/data_abstraction_as_it_applies_to_databases-h.png)
 ### How Databases Are Designed
 
 - Choose a data model.
@@ -138,20 +137,17 @@ Database Instance: The current data stored.
 A Database System Architecture defines how data is stored, accessed, and managed. It can be:
 
 - 1-Level Architecture (Single-Tier)
-The database and application are on the same system.
-The user interacts directly with the database.
+  - The database and application are on the same system.
+  - The user interacts directly with the database.
 ![alt text](../assets/img/DBMS-1-Tier-Architecture-660.webp)
 
 - 2-Level Architecture (Two-Tier)
-Client (User Interface): Sends requests.
-Database Server: Stores and processes data.
+  - Client (User Interface): Sends requests.
+  - Database Server: Stores and processes data.
 ![alt text](../assets/img/2_tier.webp)
 
 - 3-Level Architecture (Three-Tier)
-External Level: What users see.
-Conceptual Level: Data structure & relationships.
-Internal Level: How data is stored.
-![alt text](3_tier.webp)
+  - ![alt text](../assets/img/3_tier.webp)
 
 ### Conclusion
 

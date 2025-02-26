@@ -76,17 +76,9 @@ A data model is a way to organize and store data in a database. It helps in defi
 Here are four common types:
 
 - Entity-Relationship (ER) Model: Uses diagrams to show data relationships.
-   - ![alt text](../assets/img/ER-Model.png)
-
 - Semi-Structured Model: Works with flexible formats.
-   - ![alt text](../assets/img/978-0-387-39940-9_19_Part_Fig3-337_HTML.jpg)
-
 - Object-Based Model: Stores data in objects.
-   - ![alt text](../assets/img/oo.png)
-
 - Relational Model: Stores data in tables with rows and columns.
-   - ![alt text](../assets/img/Your-paragraph-text--90-.jpg)
-
 
 For this course, we focus more on Relational and ER Models as they are widely used.
 

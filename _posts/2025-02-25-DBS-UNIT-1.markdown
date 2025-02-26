@@ -21,6 +21,7 @@ A database system is a way to store and manage data in an organized way. It has 
 Together, these make up a database system, which ensures data is accurate, secure, and easy to access.
 
   - ![alt text](../assets/img/RDBMS.png)
+
 ### Why Do We Need Database Systems?
 
 Imagine a college registration process where students fill out paper forms, deposit fees at a bank, and all records are stored in different Excel files. This method is slow and inefficient.
@@ -33,7 +34,7 @@ A database system helps by:
 
 - Scalability: Can handle more data without problems.
 
-Easy access: Data is stored in one place and can be retrieved quickly.
+- Easy access: Data is stored in one place and can be retrieved quickly.
 
 ### Problems with File Systems
 

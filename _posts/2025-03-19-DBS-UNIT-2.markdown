@@ -1,0 +1,166 @@
+# Lesson 3 - ERD 
+## ER Diagrams Made Easy! 🎉
+
+- Ever wondered how companies organize tons of data? Meet Entity Relationship Diagrams (ERDs)—the blueprint for databases! 🏗️
+
+### What’s an ERD? 🤔
+
+- An ERD visualizes how data is structured, showing entities (real-world objects), their attributes (descriptive details), and relationships (connections between entities).
+
+### ERD Essentials 🔑
+
+- Entities: Nouns like Students, Customers, or Products
+
+- Attributes: Details like Name, ID, or Price
+
+- Relationships: Links between entities (e.g., a Student enrolls in Courses)
+
+- Primary Keys: Unique identifiers for each entity
+
+### Cardinality Rules 📏
+
+- 1:1 – One passport per person 🛂
+
+- 1:M – One teacher, many students 👨‍🏫
+
+- M:1 – Many employees, one company 🏢
+
+- M:M – Many students, many courses 📚
+
+### Special Cases 🎩
+
+- Weak Entities: Depend on another entity (e.g., Bank Account needs a Customer)
+
+- Ternary Relationships: When three entities interact (Doctors, Patients, Appointments)
+
+- Aggregation: Grouping relationships together
+
+### Quick Challenge! 🚀
+
+Sketch an ERD for your favorite coffee shop ☕—think Customers, Orders, and Beverages!
+
+
+# Lesson 4
+
+### Relational Models & Schema Design
+
+Hey there, database explorer! 🚀 Have you ever wondered how databases work behind the scenes? Well, let’s dive into the relational model—but don’t worry, we’ll keep it light, fun, and filled with some surprising facts!
+
+### Tables, But Not for Dinner 🍽️
+In the relational model, data is stored in tables—but not the kind you eat at! 😆 These tables contain rows (called tuples) and columns (attributes), just like a fancy spreadsheet.
+
+- 🧐 Fun Fact: The concept of relational databases was introduced by Edgar F. Codd in 1970. That means this idea is older than most of today’s programmers!
+
+### Primary Keys: The VIP Pass 🎟️
+A primary key uniquely identifies each row in a table. Think of it like your student ID—it’s unique to you!
+
+- 🔥 Fun Fact: Some database systems automatically generate primary keys if you don’t define them. It’s like magic, but for data! ✨
+
+### Foreign Keys: The Social Butterfly 🦋
+A foreign key is like a link between tables. It helps connect related information, just like tagging a friend in a social media post.
+
+- 💡 Example: If a Student table has a foreign key to a Course table, we can find out which courses a student is taking!
+
+🤯 Mind-blowing Fact: The world's largest database belongs to Google, handling over 130 trillion web pages! 🌍💾
+
+### Schema Design: The Blueprint of Data 🏗️
+A schema is like a blueprint—it defines how data is organized in a database. Designing a schema is like building a LEGO city—everything must fit perfectly!
+
+- 🎯 Pro Tip: A well-designed schema improves database performance and makes querying data faster than a superhero! 🦸‍♂️💨
+
+### NULL: The Ghost of Databases 👻
+Ever seen NULL in a database? It means “no value.” It’s like that one friend who never shows up to events but is still in the group chat! 😂
+
+- 🎉 Fun Database Quote: “In theory, there is no difference between theory and practice. But in practice, there is.” - Yogi Berra (also true for databases!)
+
+Final Words: Databases Are Everywhere! 🌍
+From social media to banking, from gaming to online shopping—databases power the digital world! Understanding how they work can help us become a data wizard! 🧙‍♂️💾
+
+# Lesson 5
+### ERD to Relational Schema
+
+Turning Entity-Relationship Diagrams (ERDs) into Relational Schemas is like translating a map into a real-world database! Let’s break it down.
+
+### What is an ERD? 🏗️
+- An ERD is a visual blueprint of how entities (like Students, Courses, and Teachers) connect in a database.
+
+💡 Fun Fact: ERDs were introduced in 1976 and are still used today!
+
+### How Does ERD Become a Table? 🛠️
+- Entities → Tables (Student → Student Table)
+Primary Key (PK) → Unique ID (Like your Student ID)
+Foreign Key (FK) → Connects Tables (Links Students to Courses)
+
+📌 Example Table:
+### SQL
+
+```
+CREATE TABLE Student (
+    StudentID INT PRIMARY KEY,
+    Name VARCHAR(100)
+);
+```
+Boom! Your database is forming! 🎉
+
+### Relationships: How Data Connects 🔄
+- 1:1 (One-to-One) – A student has one ID card.
+- 1:M (One-to-Many) – A teacher teaches many students.
+- M:N (Many-to-Many) – Students enroll in many courses.
+
+🤯 Facebook's database has tons of 1:M relationships!
+
+### NULL: The Ghost Data 👻
+- NULL means "no value." Like sending a text but getting no reply. 😂
+
+### Final Words: Why ERDs Matter! 💡
+ERDs simplify database design and prevent messy data! Try drawing an ERD of your classroom and converting it into tables. 🚀
+
+# Lesson 6
+### Relational Algebra
+Relational Algebra is like the math of databases! It helps us retrieve data efficiently, just like SQL. Let’s explore it in a simple way. 🚀
+
+### What is Relational Algebra? 🤔
+- It’s a functional query language that helps retrieve, filter, and manipulate data in a database. It forms the foundation of SQL!
+
+💡 Fun Fact: Without Relational Algebra, we wouldn’t have SQL today!
+
+### Basic Operations 🔍
+- σ (Select): Filters rows based on a condition.
+📌 Example: σCity="Miami"(Employee) → Finds all employees in Miami.
+- π (Projection): Selects specific columns.
+📌 Example: πName, Salary(Employee) → Shows only names & salaries.
+
+- ∪ (Union): Combines two tables (without duplicates).
+- ∩ (Intersection): Finds common rows between two tables.
+- (Difference): Finds rows in one table but not in another.
+### Join & Cartesian Product 🔄
+- × (Cartesian Product): Combines every row from two tables.
+- ⋈ (Join): Merges tables based on a common column (like Student & Course).
+### Real-Life Example 📌
+Want to find all employees in Miami earning over $100K?
+
+### SQL
+```
+σCity="Miami" ∧ Salary>100000 (Employee)
+```
+That’s Relational Algebra in action! 🎯
+
+### Final Words: Why It Matters! 🚀
+Relational Algebra makes databases fast, efficient, and powerful! It’s the reason we can fetch data with simple SQL queries today.
+
+## Classwork 
+### ERD 
+
+- ![alt text](<../assets/img/WhatsApp Image 2025-03-22 at 18.58.30.jpeg>)
+
+### Relational Algebra 
+
+Consider the employee database Give an expression in relational
+algebra to express each of the following queries:
+- Select all employees who live in the city “Miami”
+- Find the name of each employee who lives in city “Miami”.
+- Find the name of each employee whose salary is greater than
+$100000.
+- Find the name of each employee who lives in “Miami” and
+whose salary is greater than $100000. 
+- ![alt text](<../assets/img/WhatsApp Image 2025-03-22 at 19.02.25.jpeg>)

@@ -1,0 +1,148 @@
+---
+layout: post
+title: DBS UNIT 3
+date: 2025-03-28 13:32:20 +0300
+description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
+img: istockphoto-1673063844-612x612.jpg # Add image post (optional)
+---
+
+## Introduction to SQL and Database Fundamentals
+
+### Introduction
+Databases are the unsung heroes of modern technology, powering everything from banking systems to your favorite social media apps. When I first heard about SQL (Structured Query Language), I thought it was just a simple way to store data in tables. But after diving into these lessons, I realized it’s a powerful tool that helps manage, manipulate, and retrieve data efficiently. This unit completely changed my perspective, and I’m excited to share what I’ve learned about SQL’s essential functions and how they impact our digital world.
+
+### Key Takeaways from Lessons 6, 7, and 8
+
+## Lesson 6: Introduction to Databases
+
+### What is a Database?
+
+A database is an organized collection of data that allows for efficient storage, retrieval, and management. A Database Management System (DBMS) helps in structuring and managing data effectively.
+
+### Why Do We Need Databases?
+
+Before databases, organizations relied on file-based systems, which were messy and inefficient. Imagine tracking thousands of students' records using separate Excel sheets—it would be a nightmare! Databases solve this by ensuring security, efficiency, and easy access to data.
+
+### The Evolution of Databases
+
+The history of databases is fascinating. In the 1960s, Edgar F. Codd introduced the relational model, which changed how we store and organize data. This model still serves as the foundation of modern databases.
+
+## Lesson 7: The Structure of Databases
+
+### Three Levels of Data Abstraction
+
+Databases use different levels of abstraction to hide complexity from users:
+
+- Physical Level: Where the data is actually stored (e.g., on hard disks).
+
+- Logical Level: How data is organized into tables and relationships.
+
+- View Level: What users see in applications.
+
+This abstraction makes databases more user-friendly and efficient.
+
+### DBMS vs. RDBMS
+
+A DBMS manages databases, but an RDBMS (Relational Database Management System) specifically handles relational data (data structured in tables with relationships). This ensures consistency, integrity, and easier management.
+
+## Lesson 8: SQL and Advanced Database Operations
+
+### Null Values in SQL
+
+SQL uses NULL to represent missing or unknown data. Key takeaways:
+
+- NULL isn’t the same as zero or an empty string.
+
+- Arithmetic operations with NULL return NULL.
+
+- Use IS NULL or IS NOT NULL to check for NULL values.
+
+### Aggregate Functions
+
+SQL provides built-in functions to calculate values across multiple records:
+
+- AVG(column): Finds the average.
+
+- MIN(column): Retrieves the smallest value.
+
+- MAX(column): Retrieves the largest value.
+
+- COUNT(column): Counts records.
+
+### Grouping and Filtering Data
+
+- GROUP BY organizes data into groups based on a column.
+
+- HAVING filters results after aggregation.
+
+### Example:
+```
+SELECT deptname, AVG(salary) AS avgSalary
+FROM instructor
+GROUP BY deptname
+HAVING AVG(salary) > 42000;
+```
+
+### Nested Queries
+
+Nested queries allow a query to depend on the result of another.
+```
+SELECT course_id FROM section WHERE semester = 'Fall' AND year = 2017 
+AND course_id IN (
+    SELECT course_id FROM section WHERE semester = 'Spring' AND year = 2018
+);
+```
+### Set Membership and Comparisons
+
+- IN checks if a value exists in a set.
+
+- NOT IN ensures a value is absent.
+
+- EXISTS checks for results in a subquery.
+
+### Example:
+```
+SELECT * FROM employees WHERE department IN ('HR','Finance');
+```
+### Modifying Databases with SQL
+
+SQL allows inserting, updating, and deleting records:
+
+- Insertion:
+```
+INSERT INTO course VALUES ('CS-437', 'Database Systems', 'Comp. Sci.', 4);
+```
+- Updating:
+```
+UPDATE instructor SET salary = salary * 1.05;
+```
+- Deletion:
+```
+DELETE FROM instructor WHERE salary < 30000;
+```
+### Window Functions – A Game Changer
+
+Unlike aggregation, window functions perform calculations without collapsing results.
+
+- ROW_NUMBER(): Assigns a unique number to each row.
+
+- RANK(): Ranks rows based on criteria.
+
+- PARTITION BY: Groups data into smaller partitions.
+
+### Example:
+```
+SELECT name, department,
+RANK() OVER (PARTITION BY department ORDER BY salary DESC) AS rank
+FROM employees;
+```
+
+## What I Learned and Why It Matters
+Before these lessons, I saw databases as simple storage tools. Now, I understand how they enable efficient data management, security, and accessibility. Learning about data abstraction, SQL functions, and database evolution gave me a whole new appreciation for databases. One of the most eye-opening discussions was how Bhutan’s public sector could improve efficiency using databases.
+
+## Personal Growth and Reflection
+The idea that databases can hide complexity while providing powerful functionality fascinated me. I now see how query optimization, indexing, and data security play a crucial role in ensuring smooth operations. These lessons also sparked my curiosity about database engines like MySQL, PostgreSQL, and MongoDB.
+
+## Conclusion
+Lessons 6, 7, and 8 have been a fantastic introduction to databases and SQL. I now understand their real-world applications, from financial systems to healthcare records. As I continue exploring databases, I’m excited to learn more about security, indexing, and performance tuning. This knowledge has built a strong foundation, and I can’t wait to dive deeper into advanced topics!
+

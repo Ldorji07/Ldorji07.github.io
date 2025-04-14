@@ -1,0 +1,169 @@
+---
+layout: post
+title: DBS UNIT 4
+date: 2025-04-14 13:32:20 +0300
+description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
+img: functions-in-sql-0-1673805356.webp # Add image post (optional)
+---
+## Introduction to Joins, Views, Indexes, Functions, and Recursion in SQL
+### A Simple, Fun Ride Through SQL’s More Advanced Superpowers
+When I first started learning SQL, it felt like unlocking a secret code to speak with databases. But things really got interesting when we explored joins, views, and other features that make SQL so powerful. Lessons 9, 10, 11, and now 12 opened up a whole new world for me—like realizing your calculator also plays music and tells jokes. Okay, not exactly, but you get the point!
+
+### Key Takeaways from Lessons 9, 10, 11, and 12
+### Lesson 9: Joins, Views, and Integrity — The Social Life of Tables
+Joining Tables – It’s a Match!
+
+- Natural Join: Combines rows with the same column names and removes duplicates.
+
+- Inner Join: Only shows the matching data from both tables.
+
+- Outer Joins (Left, Right, Full): These are like "what if" versions of Inner Joins—keeping the unmatched data and filling in the gaps with NULL.
+
+Example:
+```
+SELECT * FROM Patient
+LEFT JOIN Appointment ON Patient.PatientID = Appointment.PatientID; 
+```
+#### Views – Like Instagram Filters for Your Data
+
+Views are virtual tables. They don’t store actual data but show you a customized version of it. Perfect for hiding complicated queries or sensitive info.
+
+Example:
+```
+CREATE VIEW swefaculty AS
+SELECT ID, name, deptname
+FROM instructor
+WHERE deptname = 'swe';
+```
+#### Integrity Constraints – Rules that Keep Your Data Clean
+
+- Entity Integrity: No duplicate primary keys!
+
+- Domain Constraints: Only certain values allowed.
+
+- Referential Integrity: Foreign keys must match existing primary keys.
+
+- Key Constraints: Every table needs a unique identifier.
+
+### Lesson 10: Indexes and Permissions – Keeping Things Fast and Secure
+### Indexes – The Search Engine of SQL
+Think of indexes like the table of contents in a book. Instead of flipping through every page (record), the index helps SQL jump straight to the right part.
+
+Example:
+```
+CREATE INDEX deptindex ON instructor(deptname);
+```
+#### Authorization – Who Can Do What
+SQL allows you to control who can see or change your data:
+
+- SELECT – view data
+
+- INSERT – add new data
+
+- UPDATE – change data
+
+- DELETE – remove data
+
+Example:
+```
+GRANT SELECT ON department TO Amit;
+GRANT SELECT ON department TO Amit WITH GRANT OPTION;
+```
+#### Accessing SQL from Programming Languages SQL + Java/Python = Magic! You can use:
+
+- JDBC (Java)
+
+- ODBC (Any language)
+
+This lets you build full applications using SQL behind the scenes.
+
+### Lesson 11: Functions, Procedures & Triggers – SQL Gets Smarter
+### Functions vs Procedures – SQL’s Mini-Apps
+
+- Functions: Return a single value, used in SELECT queries.
+
+- Procedures: Do more complex tasks, can return multiple outputs.
+
+Function Example:
+```
+CREATE OR REPLACE FUNCTION get_patient_appointments(p_patient_id INT)
+RETURNS TABLE (...) AS $$
+BEGIN
+   RETURN QUERY SELECT ...;
+END; $$ LANGUAGE plpgsql;
+```
+Procedure Example:
+```
+CALL schedule_appointment(3, 2, '2024-04-10', '14:30:00', 'Follow-up');
+```
+#### Triggers – SQL on Autopilot
+Triggers are automatic reactions to data changes. Think of them as SQL’s reflexes.
+
+Trigger Example:
+```
+CREATE OR REPLACE FUNCTION notify_new_prescription()
+RETURNS TRIGGER AS $$
+BEGIN
+    RAISE NOTICE 'New prescription added: %', NEW.PrescriptionID;
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+```
+This can send alerts, log activity, or enforce rules—all behind the scenes!
+
+### Lesson 12: Recursive Queries & Advanced Aggregation – SQL Learns to Loop and Think Deep
+### Recursive Queries – When SQL Starts Talking to Itself
+Recursion in SQL feels like giving your query a memory—it remembers what it did and builds on it. This is where CTEs (Common Table Expressions) come in, especially with the magic of WITH RECURSIVE. It’s like SQL chasing its own tail... but for a very good reason.
+
+How It Works: Recursive queries have two parts:
+
+- Base Case – the initial result set.
+
+- Recursive Part – keeps building on the previous result until no new rows are returned.
+
+Simple Recursive Example:
+```
+WITH R AS (
+  SELECT 1 AS n
+  UNION ALL
+  SELECT n + 1 FROM R WHERE n < 5
+)
+SELECT * FROM R;
+```
+ 
+Output:
+```
+n
+---
+1
+2
+3
+4
+5
+```
+This builds a sequence from 1 to 5, one row at a time.
+
+#### Transitive Closure – Walking a Chain of Relationships
+If (A → B) and (B → C), then (A → C). Recursive SQL is perfect for finding paths in hierarchies or graphs (like org charts, folder structures, etc.)
+
+#### Important Limitations: Recursive queries must be monotonic (they should only add new rows, not remove or modify existing ones). So no:
+
+- Aggregates (like SUM) inside the recursive part
+
+- NOT EXISTS that refers to the recursive view
+
+- EXCEPT or set difference with the recursive part on the right
+
+Why It’s Cool: It’s how databases climb trees and crawl graphs. Want to list all your manager's manager's managers? Recursive SQL to the rescue.
+
+### What I Learned and Why It Matters
+I used to think SQL was just about putting stuff in and getting stuff out. But these lessons showed me it's also about making things efficient, secure, and smart. I didn’t realize how databases can “think” for themselves with triggers, or how permissions can protect sensitive info in something like Bhutan’s health system or public records.
+
+With recursive queries, I also learned that SQL isn’t just powerful—it’s deep. It can walk through relationships step by step, like a detective piecing together clues. That’s seriously next-level.
+
+### Personal Growth and Reflection
+The idea that SQL can connect with Java or Python blew my mind—it means we’re not just limited to database management but can build real, powerful apps. The deeper I go, the more I respect the brains behind database design. Also, I’m now officially curious about PostgreSQL, indexing strategies, recursion, and even writing secure database systems.
+
+### Conclusion
+Lessons 9, 10, 11, and 12 made SQL feel less like a query language and more like a toolkit for building the backbone of any serious app. From handling hospital appointments to climbing company hierarchies, SQL can do way more than I thought. I'm excited to keep learning about recursive queries, performance tuning, and database design theory next!
+

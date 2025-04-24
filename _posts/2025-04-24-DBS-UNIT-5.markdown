@@ -58,6 +58,7 @@ Finally, we touched on modeling temporal data—something I’d never thought ab
 - Understand that functional dependencies may only hold at a specific point in time, making queries more complex.
 
 ## What I Learned and Why It Matters
+
 Before these lessons, I thought normal forms were just academic theory. But now I see how crucial they are for building reliable, efficient, and scalable databases. Whether it’s minimizing redundancy, preventing data anomalies, or accommodating changes over time, these design strategies are the backbone of modern data systems.
 
 ## Personal Growth and Reflection

@@ -65,5 +65,6 @@ Before these lessons, I thought normal forms were just academic theory. But now 
 This journey deepened my appreciation for thoughtful design. I used to see data modeling as a technical task—now I see it as a craft. It’s about anticipating real-world use cases, avoiding pitfalls, and ensuring that systems evolve gracefully. I’m especially curious now about how different databases (like PostgreSQL or MongoDB) handle normalization and temporal data.
 
 ## Conclusion
+
 Lessons 12 and 13 were an eye-opener. They showed me that databases aren’t just about tables—they’re about structure, theory, and strategy. Understanding concepts like multivalued dependencies, functional dependency theory, and temporal data has given me a toolkit that I know will shape how I approach every data project moving forward.
 

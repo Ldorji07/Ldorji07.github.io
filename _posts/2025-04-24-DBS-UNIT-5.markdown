@@ -8,6 +8,7 @@ img: pgadmin.png # Add image post (optional)
 
 # Diving Deeper into Database Design: Lessons from Normalization and Temporal Data
 ## Introduction
+
 Just when I thought I had a solid grasp of databases, Lessons 12 and 13 took things to a whole new level. I used to think designing a database was just about creating tables and linking them with keys. But these lessons introduced me to the fascinating world of normalization, functional dependencies, and even temporal data modeling. It’s like discovering the blueprint behind a well-oiled machine. Let me walk you through the key insights I picked up—and why they matter more than I ever imagined.
 
 ## Key Takeaways from Lessons 12 and 13

@@ -61,6 +61,7 @@ Finally, we touched on modeling temporal data—something I’d never thought ab
 Before these lessons, I thought normal forms were just academic theory. But now I see how crucial they are for building reliable, efficient, and scalable databases. Whether it’s minimizing redundancy, preventing data anomalies, or accommodating changes over time, these design strategies are the backbone of modern data systems.
 
 ## Personal Growth and Reflection
+
 This journey deepened my appreciation for thoughtful design. I used to see data modeling as a technical task—now I see it as a craft. It’s about anticipating real-world use cases, avoiding pitfalls, and ensuring that systems evolve gracefully. I’m especially curious now about how different databases (like PostgreSQL or MongoDB) handle normalization and temporal data.
 
 ## Conclusion

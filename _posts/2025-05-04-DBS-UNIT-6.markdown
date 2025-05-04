@@ -1,0 +1,85 @@
+---
+layout: post
+title: DBS UNIT 6
+date: 2025-05-04 13:32:20 +0300
+description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
+img: 15&14.png # Add image post (optional)
+---
+## Introduction
+okay so i knew coding was cool but these last two lessons hit different
+turns out there's a whole new level of control you can get when you dive deeper into sql and databases
+from managing transactions to keeping your data safe and consistent this stuff is wild
+lesson 14 and 15 took me from just writing basic queries to thinking like a data pro
+get ready for some serious knowledge drops
+
+### Key Takeaways from Lessons 14 and 15
+## Lesson 14: Transactions and Concurrency Control
+### what’s a transaction
+a transaction is like a promise to the database
+either everything inside the transaction happens or nothing does
+this keeps things clean and safe
+so if you transfer money from one account to another both parts of the deal need to go through or it’s like it never happened
+
+### the ac in acid
+acid is not a chemical thing here it’s what keeps databases solid
+
+- atomicity = all or nothing
+
+- onsistency = data follows the rules
+
+- isolation = no other transaction can mess with yours while it's happening
+
+- durability = once it’s done it stays done
+
+### locking things up
+concurrency control is about making sure multiple users don’t mess up each other’s data
+databases use locks to stop people from editing the same data at the same time
+kind of like putting a do not disturb sign on your row
+
+### serializable = safe
+serializability makes sure even if transactions happen at the same time the end result is the same as if they happened one after the other
+that’s how databases stay consistent without freezing everything
+
+## Lesson 15: Backup and Recovery
+### when things go wrong
+ever lost your doc because your laptop crashed
+imagine that but with a bank’s data yikes
+that’s why backups are everything
+
+### different kinds of backups
+- full backup = everything gets saved
+
+- incremental = only the stuff that changed
+
+- differential = everything that changed since the last full backup
+
+### recovery techniques
+- log-based recovery keeps a list of all the changes so if something crashes you can play them back or undo them
+
+- checkpoints are like save game points so recovery doesn’t start from scratch
+
+- shadow paging is a fancy way to avoid changing the real data until the update is fully ready
+
+### it’s all about that restore life
+backups aren’t just for show they let you bring things back exactly the way they were
+total peace of mind
+
+## What I Learned and Why It Matters
+before these lessons i thought saving data was just about hitting insert or update
+but now i see that real databases have to deal with crashes errors and lots of users doing stuff at the same time
+understanding transactions backups and recovery showed me just how powerful and trustworthy good databases really are
+these features make sure that even if the power goes out or ten people hit submit at once your data doesn’t break
+
+## Personal Growth and Reflection
+what really stood out to me is how much thought goes into keeping data safe
+like someone really sat down and said what if two people try to buy the last item at once
+or what if the server dies in the middle of an update
+it made me appreciate how clever database systems are
+now i’m way more curious about things like database security high availability and failover systems
+
+## Conclusion
+lessons 14 and 15 were a big step up
+i went from thinking databases were just storage to seeing them as super smart systems with safety nets built in
+transactions locking backups recovery plans—it’s like mission impossible level planning
+i’m excited to keep learning and maybe one day build systems that people can actually rely on
+

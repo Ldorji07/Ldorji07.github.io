@@ -6,80 +6,126 @@ description: You’ll find this post in your `_posts` directory. Go ahead and ed
 img: 15&14.png # Add image post (optional)
 ---
 ## Introduction
-okay so i knew coding was cool but these last two lessons hit different
-turns out there's a whole new level of control you can get when you dive deeper into sql and databases
-from managing transactions to keeping your data safe and consistent this stuff is wild
-lesson 14 and 15 took me from just writing basic queries to thinking like a data pro
+okay so i knew coding was cool but these last two lessons hit different  
+turns out there's a whole new level of control you can get when you dive deeper into sql and databases  
+from managing transactions to keeping your data safe and consistent this stuff is wild  
+lesson 14 and 15 took me from just writing basic queries to thinking like a data pro  
 get ready for some serious knowledge drops
 
 ### Key Takeaways from Lessons 14 and 15
+
 ## Lesson 14: Transactions and Concurrency Control
-### what’s a transaction
-a transaction is like a promise to the database
-either everything inside the transaction happens or nothing does
-this keeps things clean and safe
+
+### what’s a transaction  
+a transaction is like a promise to the database  
+either everything inside the transaction happens or nothing does  
+this keeps things clean and safe  
 so if you transfer money from one account to another both parts of the deal need to go through or it’s like it never happened
 
-### the ac in acid
+### the ac in acid  
 acid is not a chemical thing here it’s what keeps databases solid
 
-- atomicity = all or nothing
-
-- onsistency = data follows the rules
-
-- isolation = no other transaction can mess with yours while it's happening
-
+- atomicity = all or nothing  
+- consistency = data follows the rules  
+- isolation = no other transaction can mess with yours while it's happening  
 - durability = once it’s done it stays done
 
-### locking things up
-concurrency control is about making sure multiple users don’t mess up each other’s data
-databases use locks to stop people from editing the same data at the same time
+### locking things up  
+concurrency control is about making sure multiple users don’t mess up each other’s data  
+databases use locks to stop people from editing the same data at the same time  
 kind of like putting a do not disturb sign on your row
 
-### serializable = safe
-serializability makes sure even if transactions happen at the same time the end result is the same as if they happened one after the other
+### serializable = safe  
+serializability makes sure even if transactions happen at the same time the end result is the same as if they happened one after the other  
 that’s how databases stay consistent without freezing everything
 
 ## Lesson 15: Backup and Recovery
-### when things go wrong
-ever lost your doc because your laptop crashed
-imagine that but with a bank’s data yikes
+
+### when things go wrong  
+ever lost your doc because your laptop crashed  
+imagine that but with a bank’s data — yikes  
 that’s why backups are everything
 
-### different kinds of backups
-- full backup = everything gets saved
-
-- incremental = only the stuff that changed
-
+### different kinds of backups  
+- full backup = everything gets saved  
+- incremental = only the stuff that changed  
 - differential = everything that changed since the last full backup
 
-### recovery techniques
-- log-based recovery keeps a list of all the changes so if something crashes you can play them back or undo them
-
-- checkpoints are like save game points so recovery doesn’t start from scratch
-
+### recovery techniques  
+- log-based recovery keeps a list of all the changes so if something crashes you can play them back or undo them  
+- checkpoints are like save game points so recovery doesn’t start from scratch  
 - shadow paging is a fancy way to avoid changing the real data until the update is fully ready
 
-### it’s all about that restore life
-backups aren’t just for show they let you bring things back exactly the way they were
+### it’s all about that restore life  
+backups aren’t just for show they let you bring things back exactly the way they were  
 total peace of mind
 
-## What I Learned and Why It Matters
-before these lessons i thought saving data was just about hitting insert or update
-but now i see that real databases have to deal with crashes errors and lots of users doing stuff at the same time
-understanding transactions backups and recovery showed me just how powerful and trustworthy good databases really are
-these features make sure that even if the power goes out or ten people hit submit at once your data doesn’t break
+## Lesson 16: Query Optimization
 
-## Personal Growth and Reflection
-what really stood out to me is how much thought goes into keeping data safe
-like someone really sat down and said what if two people try to buy the last item at once
-or what if the server dies in the middle of an update
-it made me appreciate how clever database systems are
-now i’m way more curious about things like database security high availability and failover systems
+### what even *is* query optimization  
+so here’s the deal: when you write an SQL query, there’s usually more than one way for the database to get the answer  
+query optimization is the process of picking the *smartest* way  
+think of it like Google Maps choosing the fastest route — shortest time, fewer traffic jams (aka fewer data reads)
 
-## Conclusion
-lessons 14 and 15 were a big step up
-i went from thinking databases were just storage to seeing them as super smart systems with safety nets built in
-transactions locking backups recovery plans—it’s like mission impossible level planning
-i’m excited to keep learning and maybe one day build systems that people can actually rely on
+### transforming queries = mind blown  
+databases can rewrite your query using *equivalent expressions* that give the same result but are way faster  
+they use rules like:  
+- breaking down selections  
+- reordering joins  
+- filtering early to reduce data size  
+this is like turning a mess of directions into a clear shortcut
 
+### join order is everything  
+turns out the order you join tables can make a huge difference  
+like seriously — join the wrong ones first and you're drowning in unnecessary data  
+join the right ones early and it’s smooth sailing
+
+### choosing the best plan  
+the database doesn't just guess — it uses **cost-based optimization**  
+it checks all the valid ways to run your query, estimates how expensive they are (based on stats like table size), and picks the cheapest  
+kinda like budgeting your data reads
+
+### plan like a pro  
+it even considers different join methods:
+- nested loop joins  
+- hash joins  
+- sort-merge joins  
+
+it looks at all options and picks the combo that costs the least effort (CPU + memory + disk)
+
+### performance tricks and tips  
+optimizers use some smart hacks to keep things efficient:
+- push filters as early as possible  
+- avoid nested subqueries if you can  
+- reuse plans when only the inputs change (hello, plan caching!)  
+
+### subqueries can be sneaky slow  
+those `WHERE EXISTS` or nested selects? they might look simple but can be super slow  
+optimizers try to rewrite them using joins to speed things up  
+moral of the story: use joins when you can, or write subqueries carefully
+
+---
+
+## What I Learned and Why It Matters  
+before these lessons i thought saving data was just about hitting insert or update  
+but now i see that real databases have to deal with crashes, errors, and lots of users doing stuff at the same time  
+understanding transactions, backups, recovery, and optimization showed me just how powerful and trustworthy good databases really are  
+these features make sure that even if the power goes out or ten people hit submit at once your data doesn’t break  
+and now i know that the way you *write* a query can make or break performance — that’s next-level cool
+
+## Personal Growth and Reflection  
+what really stood out to me is how much thought goes into keeping data safe *and* fast  
+like someone really sat down and said:  
+- what if two people try to buy the last item at once?  
+- what if the server dies in the middle of an update?  
+- what’s the fastest way to find a match from millions of rows?  
+
+it made me appreciate how clever database systems are  
+now i’m way more curious about things like database security, high availability, failover systems, and performance tuning  
+writing queries is just the start — designing systems that are smart, safe, and fast is the real challenge
+
+## Conclusion  
+lessons 14, 15, and 16 were a big step up  
+i went from thinking databases were just storage to seeing them as super smart systems with safety nets and optimization engines  
+transactions, locking, backups, recovery plans, query transformations—it’s like mission impossible level planning  
+i’m excited to keep learning and maybe one day build systems that people can actually rely on  

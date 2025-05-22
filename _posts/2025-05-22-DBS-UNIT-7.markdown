@@ -1,0 +1,176 @@
+---
+layout: post
+title: DBS UNIT 7
+date: 2025-05-22 13:32:20 +0300
+description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
+img: 1_szBsfY6lp8A0jb1zOvJ0mw.jpg # Add image post (optional)
+---
+ # Lessons 18–20: Lock It, Log It, Recover It
+
+## Introduction
+
+just when i thought i had a solid grip on databases — boom, lessons 18 to 20 took things *way* deeper  
+now we’re talking serious durability, lock logic, and recovery wizardry  
+it’s like learning not just how to drive a car, but how to build a bulletproof one  
+get ready to dive into some core database superpowers — from crash-proof transactions to deadlock drama and recovery like a boss
+
+---
+
+## Key Takeaways from Lessons 18–20
+
+---
+
+## Lesson 18: All About Transactions
+
+### transactions = trust
+
+a transaction isn’t just a set of commands — it’s a promise  
+like “i’ll take $50 from account A and add it to B, and if anything breaks, it’s like nothing ever happened”
+
+### acid is back
+
+same as before, but this time we really broke it down:
+
+- **Atomicity**: all or nothing  
+- **Consistency**: the rules are never broken  
+- **Isolation**: no peeking or interfering  
+- **Durability**: what’s done stays done
+
+### crash? no problem
+
+- smart logging ensures we can *undo* or *redo* actions  
+- tools: **checkpoints**, **stable storage**, and **logs**
+
+### transaction states = emotional rollercoaster
+
+- **Active**: things are happening  
+- **Partially Committed**: done, maybe  
+- **Failed**: oops  
+- **Aborted**: rolled back  
+- **Committed**: all good and saved forever
+
+---
+
+## Lesson 19: Lock It Down (Concurrency Control)
+
+### the problem: too many cooks
+
+multiple transactions can mess with the same data — like two people editing the same doc  
+so we use **locks** to control who touches what, and when
+
+### shared vs exclusive
+
+- **Shared (S)**: read-only, more than one allowed  
+- **Exclusive (X)**: read + write, solo access only
+
+### two-phase locking = organized chaos
+
+1. **Growing phase**: grab all your locks  
+2. **Shrinking phase**: release them — no new ones allowed
+
+### deadlocks = transaction traffic jams
+
+sometimes transactions wait on each other forever — solutions:
+
+- **Detection**: build a waits-for graph  
+- **Prevention**:
+  - **Wait-Die**: old waits, young aborts  
+  - **Wound-Wait**: old wounds, young waits
+
+### lock granularity
+
+- lock a row, a table, a page — up to the DBMS  
+- trade-off between concurrency and overhead
+
+### real world SQL
+
+```sql
+-- Shared Lock
+BEGIN;
+LOCK TABLE example_table IN SHARE MODE;
+COMMIT;
+
+-- Exclusive Lock
+BEGIN;
+LOCK TABLE example_table IN EXCLUSIVE MODE;
+UPDATE example_table SET data = 'Updated';
+COMMIT;
+```
+## Lesson 20: Recovery Like a Pro
+
+### what if everything breaks?
+
+fires, crashes, bugs — databases need a way to bounce back  
+enter: **recovery algorithms**  
+they make sure your data stays consistent no matter what
+
+
+### logs are life
+
+before a change hits the database, it gets logged  
+logs look like this: `<Ti, Xj, old_value, new_value>`  
+and they let us **undo** and **redo** actions as needed
+
+
+### undo vs redo
+
+- **undo(Ti)**: roll back uncommitted stuff  
+- **redo(Ti)**: reapply committed changes  
+based on what’s in the logs when a crash hits
+
+
+### checkpoints = database save points
+
+they keep recovery fast by saying:  
+> “you only need to start from *here*, not the beginning”
+
+even better: **fuzzy checkpoints** let you checkpoint without pausing all transactions
+
+
+### write-ahead logging (WAL)
+
+make sure the logs are saved **before** you write to the actual database  
+this keeps **atomicity** alive and strong
+
+
+### aries: the crash recovery champ
+
+built by IBM, trusted everywhere  
+ARIES handles crashes in 3 steps:
+
+1. **analysis**: find what was happening  
+2. **redo**: apply changes  
+3. **undo**: roll back the incomplete stuff  
+
+
+### main-memory databases? still need recovery
+
+just because it’s in RAM doesn’t mean it’s safe  
+you *still* need logs, checkpoints, and recovery plans  
+some even **parallelize recovery** to bring the system back in seconds
+
+
+## What I Learned and Why It Matters
+
+these lessons taught me that keeping data safe isn’t just about storage — it’s about planning for the worst  
+i now get why **logging is non-negotiable**, why transactions follow strict rules, and how deep the rabbit hole goes when it comes to performance *and* safety  
+every read, write, lock, or crash has a plan — and databases are ready for all of it
+
+---
+
+## Personal Growth and Reflection
+
+i never realized how much strategy goes into **concurrency and recovery**  
+it’s like every move a database makes is chess — planned, safe, and reversible  
+now i’m hooked on understanding what happens under the hood  
+things like **multi-version concurrency control**, **snapshot isolation**, and **ARIES recovery**? sounds like stuff from a sci-fi thriller  
+i’m starting to think like a real DB engineer, not just someone who runs SQL queries
+
+---
+
+## Conclusion
+
+lessons 18 to 20 taught me that databases are designed to *never* leave you hanging  
+they **lock smart**, **recover gracefully**, and always make sure your data is safe even if the world ends (okay, maybe not literally)  
+i’m walking away from these lessons with a much deeper respect for the systems that quietly power our apps, games, and everything digital  
+**next step?** learning how to build these kinds of systems myself
